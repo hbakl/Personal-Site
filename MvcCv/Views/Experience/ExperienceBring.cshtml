@@ -1,0 +1,29 @@
+﻿@model MvcCv.Models.Entity.TblExperience
+
+
+@{
+    ViewBag.Title = "ExperienceBring";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+</br>
+<h4> Deneyim Düzenle</h4>
+</br>
+<form method="post">
+    @Html.Label("Deneyim ID")
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    @Html.Label("Başlık")
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    @Html.Label("Altbaşlık")
+    @Html.TextBoxFor(x => x.Subtitle, new { @class = "form-control" })
+    <br />
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+    @Html.Label("Açıklama")
+    @Html.TextAreaFor(x => x.Explanation, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Güncelle</button>
+</form>

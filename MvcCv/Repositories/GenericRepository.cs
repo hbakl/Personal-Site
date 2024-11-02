@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Web;
 using MvcCv.Models.Entity;
 
@@ -21,7 +22,7 @@ namespace MvcCv.Repositories
             db.SaveChanges();  
         }
 
-        public void TRemove (T p)
+        public void TDelete (T p)
         {
             db.Set<T>().Remove(p);
             db.SaveChanges();
@@ -37,7 +38,10 @@ namespace MvcCv.Repositories
             db.SaveChanges();
         }
 
-
+        public T Find(Expression<Func<T,bool>> where)
+        {
+            return db.Set<T>().FirstOrDefault(where);
+        }
 
     }
 }

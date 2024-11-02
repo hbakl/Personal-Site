@@ -31,10 +31,10 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NameSurname" Type="varchar" MaxLength="100" />
+          <Property Name="Mail" Type="varchar" MaxLength="100" />
           <Property Name="Subject" Type="varchar" MaxLength="100" />
           <Property Name="Message" Type="varchar" MaxLength="100" />
-          <Property Name="Date" Type="date" />
-          <Property Name="Mail" Type="varchar" MaxLength="100" />
+          <Property Name="Date" Type="datetime" />
         </EntityType>
         <EntityType Name="TblEducation">
           <Key>
@@ -71,6 +71,7 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Skill" Type="varchar" MaxLength="100" />
+          <Property Name="Rate" Type="tinyint" />
         </EntityType>
         <EntityType Name="TblUser">
           <Key>
@@ -122,7 +123,7 @@
           <Property Name="NameSurname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Subject" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Message" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
           <Property Name="Mail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="TblEducation">
@@ -160,6 +161,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Skill" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Rate" Type="Byte" />
         </EntityType>
         <EntityType Name="TblUser">
           <Key>
@@ -254,6 +256,7 @@
           <EntitySetMapping Name="TblSkill">
             <EntityTypeMapping TypeName="DbCvModel.TblSkill">
               <MappingFragment StoreEntitySet="TblSkill">
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Skill" ColumnName="Skill" />
               </MappingFragment>
